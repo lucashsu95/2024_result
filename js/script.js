@@ -1,7 +1,7 @@
 // <!-----------------------main Start-->
 var flag = "";
 var flag2 = 1;
-const root = document.querySelector(":root");
+// const root = document.documentElement;
 let oldTop = 0;
 window.onscroll = () => {
     var nowTop = document.documentElement.scrollTop;
@@ -68,7 +68,7 @@ const app = Vue.createApp({
                 },
                 {
                     title: '2022鶑歌陪訓賽',
-                    imgs: ['20221119_081055.jpg', '20221119_081057.jpg', '20221119_081737.jpg', '20221119_082645.jpg', '20221119_082655.jpg', '20221119_105345.jpg'],
+                    imgs: ['20221119_081055.jpg', '20221119_081737.jpg', '20221119_082645.jpg', '20221119_082655.jpg', '20221119_105345.jpg'],
                     date: '2022-11-19',
                 },
                 {
@@ -97,7 +97,7 @@ const app = Vue.createApp({
                 },
                 {
                     title: '2023全國技能競賽-全國賽',
-                    imgs: ['20230713_102652.jpg', '20230713_103435.jpg', '20230715_085628.jpg', '20230715_085645.jpg', '20230715_085653.jpg'],
+                    imgs: ['20230713_102652.jpg', '20230715_085628.jpg', '20230715_085645.jpg', '20230715_085653.jpg'],
                     date: '2023-07-13',
                     rank: '佳作',
                 },
@@ -120,10 +120,14 @@ const app = Vue.createApp({
                     rank: '',
                 },
             ],
+
             current_contest: {},
             userName: "",
             userGmail: "",
             usercontent: "",
+            sliderIndexDivs: [],
+            currentIndex: 0,
+            auto: null,
         };
     },
     mounted() {
@@ -145,10 +149,28 @@ const app = Vue.createApp({
         },
         changeCurrentContest(idx) {
             this.current_contest = this.contests[idx];
+            this.currentIndex = 0
         },
-        prviewImg(url) {
-            return `images/${this.current_contest.title}/${url}`;
-        }
+        prviewImg(title, url) {
+            return `images/${title}/${url}`;
+        },
+        renderSlider() {
+            clearInterval(this.auto);
+            this.auto = setTimeout(this.changeSlider, 10000);
+        },
+        changeSlider(flag = 1) {
+            this.currentIndex = (this.currentIndex + flag + this.current_contest.imgs.length) % this.current_contest.imgs.length;
+            this.renderSlider();
+        },
+        changeIndex(index) {
+            this.currentIndex = index;
+            this.renderSlider();
+        },
+    },
+    watch: {
+        currentIndex() {
+            this.renderSlider();
+        },
     },
 }).mount("#app");
 // <!-------------------------main End------------------------->

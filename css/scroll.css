@@ -1,0 +1,292 @@
+/* sec4 */
+#sec4 {
+    position: relative;
+    height: 320vw;
+    background: url(../圖片檔/B\ 學城建築特色照/Campus_Environment11.jpg) center center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.hori_absolute {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.hori1_deco1 {
+    position: absolute;
+    bottom: 0;
+    left: -2%;
+    background-color: var(--color1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    font-family: f1;
+    color: white;
+    height: 8rem;
+    width: 25rem;
+    z-index: 3;
+    box-shadow: var(--bxd);
+}
+
+.hori1_deco2 {
+    position: absolute;
+    top: 30%;
+    right: -5%;
+    background-color: var(--color1);
+    height: 10rem;
+    width: 12rem;
+    z-index: 3;
+    box-shadow: var(--bxd);
+}
+
+.hori1_deco3 {
+    position: absolute;
+    top: 10%;
+    left: -5%;
+    background-color: var(--color1);
+    border-radius: 25px;
+    height: 5px;
+    width: 10rem;
+    z-index: 3;
+    box-shadow: var(--bxd);
+
+}
+
+.hori2_deco1 {
+    position: absolute;
+    top: 10%;
+    left: 5%;
+    font-family: f1;
+    font-size: 12rem;
+    color: white;
+    opacity: 0.2;
+    text-shadow: var(--bxd);
+}
+
+.hori2_deco2 {
+    position: absolute;
+    bottom: 8%;
+    left: 42%;
+    font-family: f1;
+    font-size: 12rem;
+    color: white;
+    opacity: 0.2;
+    text-shadow: var(--bxd);
+}
+
+.hori2_deco3 {
+    position: absolute;
+    top: 8%;
+    right: -5%;
+    font-family: f1;
+    font-size: 12rem;
+    color: white;
+    opacity: 0.2;
+    text-shadow: var(--bxd);
+}
+
+#hori1 {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+}
+
+#hori2 {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    width: 200vw;
+}
+
+.hori_fixed {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: black;
+    opacity: 0.7;
+    transition: 1.2s;
+}
+
+.hori_blur {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    transition: 1.2s;
+}
+
+.fx .hori_fixed,
+.fx .hori_blur,
+.fx .hori_absolute {
+    position: fixed;
+}
+
+.b0 .hori_fixed,
+.b0 .hori_blur,
+.b0 .hori_absolute {
+    bottom: 0;
+    top: auto;
+}
+
+.hori2_outer {
+    display: flex;
+    align-items: center;
+
+    position: relative;
+    background: url(../圖片檔/A官方形象照/Official_Image1.jpg) center center;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 50rem;
+    width: 100%;
+}
+
+.paint-brush svg {
+    font-size: 12rem;
+    margin-bottom: 2rem;
+}
+
+.paint-brush {
+    position: absolute;
+    top: 5%;
+    left: -10%;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    transition: .5s !important;
+}
+
+.w-40 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 40vw;
+    background-color: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(15px);
+    transition: .5s !important;
+}
+
+.hori2_title {
+    position: relative;
+    padding: 0 7rem;
+    z-index: 3;
+}
+
+.hori1_h1 {
+    font-size: 4rem;
+    font-family: f1;
+    color: white;
+}
+
+.hori1_h2 {
+    font-size: 2.6rem;
+    font-family: f1;
+    color: var(--color1);
+}
+
+.hori1_p {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: white;
+    width: 60%;
+    line-height: 1.6;
+    margin: 1.5rem 0;
+}
+
+.blockes {
+    display: flex;
+    justify-content: center;
+    width: 40%;
+
+}
+
+.block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color1);
+    -webkit-text-stroke: 2px white;
+    color: transparent;
+    font-size: 3rem;
+    height: 8rem;
+    width: 8rem;
+}
+
+.hori2_items {
+    width: 60%;
+}
+
+.hori2_img {
+    cursor: pointer;
+    position: relative;
+}
+
+.hori2_img::before {
+    content: '';
+    height: 100%;
+    width: 0%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: linear-gradient(var(--color1), var(--color2));
+    transition: .5s;
+    opacity: 0;
+}
+
+.hori2_img::after {
+    content: '查看更多';
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    font-family: f2;
+    color: white;
+    height: 100%;
+    width: 0%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: linear-gradient(var(--color1), var(--color2));
+    transition: .5s;
+    opacity: 0;
+}
+
+.hori2_img:hover::after,
+.hori2_img:hover::before {
+    width: 100%;
+    opacity: 0.8;
+}
+
+.hori2_img img {
+    height: 30rem;
+    width: 100%;
+    object-fit: cover;
+}
+
+.hori2_brick {
+    border-radius: 25px;
+    background-color: var(--color1);
+    height: 5rem;
+    width: 5px;
+}
+
+.hori2_p {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: white;
+    margin-top: 1rem;
+    text-align: justify;
+    width: 100%;
+}
