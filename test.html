@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/swiper-bundle.min.css">
+    <script src="./js/swiper-bundle.min.js"></script>
+    <style>
+        .body4-swiper .swiper-slide {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 500px;
+            transform: scale(0.85);
+            transition: all .3s linear;
+        }
+
+        .body4-swiper .swiper-slide-active {
+            transform: scale(1);
+        }
+
+        .forum {
+            width: 500px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <section id="body4" class="min-vh-100">
+        <div class="swiper body4-swiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="forum">
+                        <h1>Test1</h1>
+                        <div class="forum-content p-3">
+                            這個活動值得推薦，透過國際學術研究與資源整合，讓臺灣的藝術教育在國際
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="forum">
+                        <h1>Test2</h1>
+                        <div class="forum-content p-3">
+                            此次活動在強調學生成就與畢業生的國際競爭優勢
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="swiper-pagination body4-pagination"></div>
+            <div class="swiper-button-prev body4-prev"></div>
+            <div class="swiper-button-next body4-next"></div>
+        </div>
+    </section>
+
+    <script>
+        var body4_swiper = new Swiper('.body4-swiper', {
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: '.body4-pagination',
+                clickable: true,
+            },
+            navigation: {
+                prevEl: '.body4-prev',
+                nextEl: '.body4-next',
+            }
+        })
+
+        var body4_swiper_right = new Swiper('.body4-right-swiper', {
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: '.body4-pagination-right',
+                clickable: true,
+            },
+            navigation: {
+                prevEl: '.body4-prev-right',
+                nextEl: '.body4-next-right',
+            }
+        })
+
+    </script>
+
+</body>
+
+</html>
