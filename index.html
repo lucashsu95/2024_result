@@ -7,9 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>資處科成果展-資會玩AI</title>
     <!-- bootstrap JavaScript Bundle with Popper -->
-    <script src="./js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
     <!-- bootstrap CSS only -->
-    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous" />
     <!-- bootstrap icon -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css" />
     <!-- aos.js -->
@@ -162,15 +165,13 @@
         <section id='contest'>
             <h1 class="sech1"><i class="bi bi-newspaper"></i> 三年競賽成果</h1>
             <div class="container-fluid px-3">
-                <div class="row mt-5">
-                    <div class='row gap-2 justify-content-center'>
-                        <div v-for='(contest,idx) in contests'
-                            class="col-3 calendar-container fw-bold flex-column fs-4 mb-3 rounded-4 p-5 fcc"
-                            @click='changeCurrentContest(idx)' data-bs-toggle="modal" data-bs-target="#exampleModal">
-                            <img :src="prviewImg(contest.title,contest.imgs[0])" :alt="contest.imgs[0]">
-                            <header>{{contest.date}}</header>
-                            <article class="mt-3">{{contest.title}}</article>
-                        </div>
+                <div class="row justify-content-center mt-5">
+                    <div v-for='(contest,idx) in contests'
+                        class="col-3 calendar-container fw-bold flex-column fs-4 rounded-4 p-5 fcc"
+                        @click='changeCurrentContest(idx)' data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        <img :src="prviewImg(contest.title,contest.imgs[0])" :alt="contest.imgs[0]">
+                        <header>{{contest.date}}</header>
+                        <article class="mt-3">{{contest.title}}</article>
                     </div>
                 </div>
             </div>
@@ -217,144 +218,8 @@
 
 
         <!-- highlight Start -->
-        <section id='highlight'>
-            <h1 class="sech1"><i class="bi bi-newspaper"></i> 三年活動花絮</h1>
-            <section id="sec4">
+        <section id="sec4">
 
-                <div class="hori_fixed"></div>
-                <div class="hori_blur"></div>
-                <div class="hori_absolute">
-                    <div class="df rwd-wrap">
-                        <div id="hori1">
-                            <div class="w-40 deco">
-                                <div class="paint-brush f2 color_w" data-aos="fade-right">
-                                    <i class="fa-solid fa-paint-brush"></i>
-                                    <h1>東花藝術季</h1>
-                                    <h1>WANDERER</h1>
-                                </div>
-                            </div>
-                            <div class="container col-10">
-                                <div class="row">
-                                    <div class="col-lg-3 col-12"></div>
-                                    <div class="col-lg-9 col-12">
-
-                                        <div class="hori1_deco1" data-aos="fade-up">WHAT NEWS</div>
-                                        <div class="hori1_deco2" data-aos="fade-up"></div>
-                                        <div class="hori1_deco3" data-aos="fade-up"></div>
-
-                                        <div class="hori2_outer">
-                                            <div class="dark" style="opacity: 0.2;"></div>
-                                            <div class="hori2_title">
-                                                <h1 class="tsd hori1_h1" data-aos="fade-up" data-aos-delay="200">浪人季最新活動
-                                                </h1>
-                                                <h2 class="tsd hori1_h2" data-aos="fade-up" data-aos-delay="400">國際性文化季－
-                                                </h2>
-                                                <p class="tsd hori1_p" data-aos="fade-up" data-aos-delay="600">
-                                                    我們關注藝術、文創產業的發展趨勢，並整合科技資源，推動藝
-                                                    術和科技的跨界結合，培養學生具備前瞻性思維，快來看看有那些活動吧！</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div id="hori2">
-                            <div class="hori2_deco1 deco">ARTS</div>
-                            <div class="hori2_deco2 deco">FESTIVAL</div>
-                            <div class="hori2_deco3 deco">INTRO</div>
-                            <div class="container col-12">
-                                <div class="row">
-                                    <div class="col-lg-3 col-12 df jc">
-                                        <div class="blockes">
-                                            <div class="block">01</div>
-                                        </div>
-                                        <div class="hori2_items">
-                                            <div data-toggle="modal" data-target="#hori_1" class="hori2_img mb-5"><img
-                                                    src="./images/練習照花絮/20231128_205714.jpg" alt="">
-                                            </div>
-                                            <div class="hori2_item">
-                                                <div class="df ac">
-                                                    <div class="hori2_brick mr-5"></div>
-                                                    <div class="df fc">
-                                                        <h2 class="color1 tsd">COUN校慶倒數開始！TDOWN</h2>
-                                                        <h1 class="color_w tsd"> </h1>
-                                                    </div>
-                                                </div>
-                                                <p class="hori2_p tsd">活動提醒：踏入浪人季前，距離盛典只剩下 8 天！準備迎接 3 月起一場充滿藝術與文化的盛會！
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-3 col-12 df jc">
-                                        <div class="blockes">
-                                            <div class="block bg2" style="margin-top: 6rem;">02</div>
-                                        </div>
-                                        <div class="hori2_items rc">
-                                            <div class="hori2_item">
-                                                <div class="df ac">
-                                                    <div class="hori2_brick bg2 mr-5"></div>
-                                                    <div class="df fc">
-                                                        <h2 class="color2 ">ONLINE</h2>
-                                                        <h1 class="color_w tsd">即時對話服務上線</h1>
-                                                    </div>
-                                                </div>
-                                                <p class="hori2_p tsd">活動消息：有問題嗎？現在可以透過我們的即時線上機器人找到解答，快來詢問有關活動的所有問題！</p>
-                                            </div>
-                                            <div data-toggle="modal" data-target="#hori_2"
-                                                class="hori2_img mt-lg-5 mt-0 mb-lg-0 mb-5"><img
-                                                    src="./images/練習照花絮/20231128_205714.jpg" alt="">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-3 col-12 df jc">
-                                        <div class="blockes">
-                                            <div class="block">03</div>
-                                        </div>
-                                        <div class="hori2_items">
-                                            <div data-toggle="modal" data-target="#hori_3" class="hori2_img mb-5"><img
-                                                    src="./images/練習照花絮/20231128_205714.jpg" alt="">
-                                            </div>
-                                            <div class="hori2_item">
-                                                <div class="df ac">
-                                                    <div class="hori2_brick mr-5"></div>
-                                                    <div class="df fc">
-                                                        <h2 class="color1 ">ACTIVITY</h2>
-                                                        <h1 class="color_w tsd"> 活動日曆上線</h1>
-                                                    </div>
-                                                </div>
-                                                <p class="hori2_p tsd">
-                                                    提醒大家：活動日曆上線啦！快來看看有哪些活動吧，不管是大朋友還是小朋友，都不要錯過期間的任何精彩表演！</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-3 col-12 df jc">
-                                        <div class="blockes">
-                                            <div class="block bg2" style="margin-top: 6rem;">04</div>
-                                        </div>
-                                        <div class="hori2_items rc">
-                                            <div class="hori2_item">
-                                                <div class="df ac">
-                                                    <div class="hori2_brick bg2 mr-5"></div>
-                                                    <div class="df fc">
-                                                        <h2 class="color2 tsd">EXPLOOR</h2>
-                                                        <h1 class="color_w tsd"> 探索校園環境</h1>
-                                                    </div>
-                                                </div>
-                                                <p class="hori2_p tsd">活動提醒：踏入浪人季前，距離盛典只剩下 8 天！準備迎接 3 月起一場充滿藝術與文化的盛會！
-                                                </p>
-                                            </div>
-                                            <div data-toggle="modal" data-target="#hori_4"
-                                                class="hori2_img mt-lg-5 mt-0 mb-lg-0 mb-5"><img
-                                                    src="./images/練習照花絮/20231128_205714.jpg" alt="">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
         </section>
         <!-- highlight End -->
     </div>
