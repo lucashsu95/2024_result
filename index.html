@@ -26,10 +26,6 @@
     <link rel="stylesheet" href="./css/loading.css" />
     <link rel="stylesheet" href="./css/slider.css">
     <link rel="stylesheet" href="./css/style.css" />
-    <link rel="stylesheet" href="./css/scroll.css">
-    <!-- owl -->
-    <script src="./js/owl.carousel.min.js"></script>
-
     <link rel="icon" href="./images/icon.png" />
 </head>
 
@@ -164,8 +160,8 @@
         <!-- contest Start -->
         <section id='contest'>
             <h1 class="sech1"><i class="bi bi-newspaper"></i> 三年競賽成果</h1>
-            <div class="container-fluid px-3">
-                <div class="row justify-content-center mt-5">
+            <div class="container-fluid p-3">
+                <div class="row gap-3 justify-content-center mt-5">
                     <div v-for='(contest,idx) in contests'
                         class="col-3 calendar-container fw-bold flex-column fs-4 rounded-4 p-5 fcc"
                         @click='changeCurrentContest(idx)' data-bs-toggle="modal" data-bs-target="#exampleModal">
@@ -219,13 +215,14 @@
 
         <!-- highlight Start -->
         <section id="sec4">
+            <h1 class="sech1"><i class="bi bi-newspaper"></i> 三年活動花絮</h1>
+            
 
         </section>
         <!-- highlight End -->
     </div>
 
     <!-- script.js Start -->
-    <script src="./js/scroll.js "></script>
     <script src="./js/script.js"></script>
     <!-- script.js End -->
 
