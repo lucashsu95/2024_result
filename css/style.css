@@ -92,17 +92,14 @@ a {
 }
 
 
-
 .sech2{
     -webkit-text-stroke: 2px var(--color1);
     color: transparent;
-    font-size: 5.5rem;
 }
 
 .sech2-2{
     color: transparent;
     -webkit-text-stroke: 2px var(--color2);
-    font-size: 5.5rem;
 }
 @media (min-width: 900px) {
     .sech1 {
@@ -215,7 +212,7 @@ a {
 
 .carousel h3 {
     text-shadow: 3px 3px 5px black;
-    font-size: 2.7vw;
+    font-size: 2.9vw;
     font-weight:700;
 }
 
@@ -232,7 +229,7 @@ a {
 
 .carousel-caption.costom2 {
     right: 65%;
-    top: 30rem;
+    bottom:12rem
 }
 
 
