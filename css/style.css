@@ -231,8 +231,22 @@ a {
     right: 65%;
     bottom:12rem
 }
+.carousel button{
+    z-index: 99999999;
+    
+}
 
 
+.p1m {
+    background: url(../images/p1m.svg);
+    position: absolute;
+    background-size: cover;
+    z-index: 9999;
+    top:-4vh;
+    left:0;
+    height: 100vh;
+    width: 100%;
+}
 
 /* introduce_ai Start */
 
