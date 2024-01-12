@@ -375,9 +375,12 @@ a {
     background-color: rgba(0, 0, 0, 0);
     color: rgba(0, 0, 0, 0);
 
-    & img {
+    /* & img {
         filter: brightness(1)
-    }
+    } */
+}
+.calendar-container:hover img{
+    filter: brightness(1)
 }
 
 .calendar-container :is(header, article) {

@@ -18,6 +18,9 @@
     <!-- aos.js -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- swiper -->
+    <link rel="stylesheet" href="./css/swiper-bundle.min.css">
+    <script src="./js/swiper-bundle.min.js"></script>
     <!-- Vue3 -->
     <script src="./js/vue.global.js"></script>
     <!-- jquery -->
@@ -131,8 +134,8 @@
         <!-- Carousel End -->
 
         <!-- AI 介紹 Start -->
-        <section id="introduce_ai">
-            <h1 class="sech1"><i class="bi bi-newspaper"></i> AI介紹</h1>
+        <section id="introduce_ai" class="min-vh-100">
+            <h1 class="sech1 py-5"><i class="bi bi-newspaper"></i> AI介紹</h1>
             <div class="slide">
                 <div class="slide-control">
                     <div class="slide-prev" @click="slide_id = slide_id == 0 ? 3 : slide_id - 1">
@@ -185,27 +188,19 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body overflow-hidden">
-                        <!-- body Start -->
-                        <div class="slider" :style="{ transform: `translateX(-${100 * currentIndex}%)` }">
-                            <!-- 只要增加圖片即可，其它東西會自己增加 -->
-                            <img v-for="(img, index) in current_contest.imgs"
-                                :src="prviewImg(current_contest.title,img)" :key="index" />
+                        <div class="swiper current-contest-swiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide" v-for="(img, index) in current_contest.imgs">
+                                    <img :src="prviewImg(current_contest.title,img)" :key="index" />    
+                                </div>
+                            </div>
+                            <div class="swiper-button-prev current-contest-swiper-prev"></div>
+                            <div class="swiper-button-next current-contest-swiper-next"></div>
                         </div>
-                        <!-- control -->
-                        <div class="control">
-                            <button class="prev" @click="changeSlider(-1)">&lt;</button>
-                            <button class="next" @click="changeSlider()">></button>
-                        </div>
-                        <!-- index -->
-                        <div class="slider_index">
-                            <div v-for="(div, index) in sliderIndexDivs" @click="changeIndex(index)"
-                                :class="{ active: index === currentIndex }" :key="index" class="slider_index"></div>
-                        </div>
-                        <!-- body End -->
                     </div>
                     <div class="modal-footer">
                         <button type="submit"
-                            class="btn btn-primary px-3 py-2 rounded-pill modal-submit-btn">OK</button>
+                            class="btn btn-primary px-3 py-2 rounded-pill modal-submit-btn" data-bs-dismiss="modal">OK</button>
                     </div>
                 </div>
             </div>
@@ -216,7 +211,7 @@
         <!-- highlight Start -->
         <section id="sec4">
             <h1 class="sech1"><i class="bi bi-newspaper"></i> 三年活動花絮</h1>
-            
+        
 
         </section>
         <!-- highlight End -->

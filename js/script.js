@@ -68,7 +68,7 @@ const app = Vue.createApp({
                 },
                 {
                     title: '2022鶑歌陪訓賽',
-                    imgs: ['20221119_081055.jpg', '20221119_081737.jpg', '20221119_082645.jpg', '20221119_082655.jpg', '20221119_105345.jpg'],
+                    imgs: ['20221119_081055.jpg', '20221119_081057.jpg', '20221119_082645.jpg', '20221119_082655.jpg', '20221119_105345.jpg'],
                     date: '2022-11-19',
                 },
                 {
@@ -177,5 +177,16 @@ const app = Vue.createApp({
 
 
 // <!-------------------------swiper Start------------------------->
+var current_contest_swiper = new Swiper('.current-contest-swiper',{
+    // loop:true,
+    slidesPerView:1,
+    spaceBetween:10,
+    navigation:{
+        prevEl:'.current-contest-swiper-prev',
+        nextEl:'.current-contest-swiper-next'
+    }
+})
 
 // <!-------------------------swiper End------------------------->
+
+
