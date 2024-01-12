@@ -20,9 +20,6 @@ const app = Vue.createApp({
             text_h: "",
             text_content: "",
             Lsum: 0,
-            select_value: "減脂系列",
-            shopingCart_toggle_img: "<i class='bi bi-cart4'></i>",
-            select_container: ["減脂系列", "增肌系列", "豪華系列"],
             slide_id: 0,
             slide: [{
                 title: "什麼是人工智慧？",

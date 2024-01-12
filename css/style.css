@@ -197,14 +197,13 @@ a {
 .carousel h3 {
     text-shadow: 3px 3px 5px black;
     font-size: 2.7vw;
-    font-weight: bold;
+    font-weight:700;
 }
 
 .carousel p {
     text-shadow: 3px 3px 7px black;
-    line-height: 30px;
-    font-size: 1.5rem;
-    font-weight: bold;
+    font-size: 2vw;
+    font-weight:700;
 }
 
 .carousel-caption {
