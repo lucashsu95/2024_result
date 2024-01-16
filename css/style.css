@@ -237,7 +237,7 @@ a {
 }
 
 .p1m {
-    background: url(../images/p1m.svg);
+    background: url(../images/other/p1m.svg);
     position: absolute;
     background-size: cover;
     z-index: 9999;
