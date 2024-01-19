@@ -53,7 +53,7 @@ const app = Vue.createApp({
             contests: [
                 {
                     title: '2021北區程式設計競賽',
-                    imgs: ['1.jpg', '2.jpg','3.jpg'],
+                    imgs: ['1.jpg', '2.jpg', '3.jpg'],
                     date: '2021-11-07',
                 },
                 {
@@ -63,12 +63,12 @@ const app = Vue.createApp({
                 },
                 {
                     title: '2022全國技能競賽',
-                    imgs: ['1.jpg', '2.jpg','3.png'],
+                    imgs: ['1.jpg', '2.jpg', '3.png'],
                     date: '2022-04-21',
                 },
                 {
                     title: '2022德霖全國程式設計競賽',
-                    imgs: ['1.jpg', '2.jpg','3.jpg'],
+                    imgs: ['1.jpg', '2.jpg', '3.jpg'],
                     date: '2022-10-23',
                 },
                 {
@@ -78,12 +78,12 @@ const app = Vue.createApp({
                 },
                 {
                     title: '2022鶑歌陪訓賽',
-                    imgs: ['1.jpg','2.jpg','3.jpg','4.jpg'],
+                    imgs: ['1.jpg', '2.jpg', '3.jpg', '4.jpg'],
                     date: '2022-11-19',
                 },
                 {
                     title: '2022專題校內初賽',
-                    imgs: ['1.jpg','2.jpg','3.jpg'],
+                    imgs: ['1.jpg', '2.jpg', '3.jpg'],
                     date: '2022-12-29',
                 },
                 {
@@ -93,7 +93,7 @@ const app = Vue.createApp({
                 },
                 {
                     title: '2023景文專題',
-                    imgs: ['1.jpg','2.jpg','3.jpg','4.jpg','5.jpg','6.jpg'],
+                    imgs: ['1.jpg', '2.jpg', '3.jpg', '4.jpg', '5.jpg', '6.jpg'],
                     date: '2023-03-17',
                 },
                 {
@@ -108,31 +108,31 @@ const app = Vue.createApp({
                 },
                 {
                     title: '2023全國專題',
-                    imgs: ['1.jpg','2.jpg','3.jpg','4.jpg','5.jpg','6.jpg'],
+                    imgs: ['1.jpg', '2.jpg', '3.jpg', '4.jpg', '5.jpg', '6.jpg'],
                     date: '2023-05-04',
                 },
                 {
                     title: '2023全國技能競賽-全國賽',
-                    imgs: ['1.jpg','2.jpg','3.jpg','4.jpg'],
+                    imgs: ['1.jpg', '2.jpg', '3.jpg', '4.jpg'],
                     date: '2023-07-13',
                 },
                 {
                     title: '2023TQC比賽',
-                    imgs: ['1.jpg','2.jpg','3.jpg','4.jpg','5.jpg','6.jpg','7.jpg','8.jpg','9.jpg','10.jpg','11.jpg'],
+                    imgs: ['1.jpg', '2.jpg', '3.jpg', '4.jpg', '5.jpg', '6.jpg', '7.jpg', '8.jpg', '9.jpg', '10.jpg', '11.jpg'],
                     date: '2023-10-14',
                 },
                 {
                     title: '2023鶑歌陪訓賽',
-                    imgs: ['1.jpg','2.jpg','3.jpg','4.jpg','5.jpg','6.jpg','7.jpg'],
+                    imgs: ['1.jpg', '2.jpg', '3.jpg', '4.jpg', '5.jpg', '6.jpg', '7.jpg'],
                     date: '2023-10-28',
                 },
                 {
                     title: '112全國技藝競賽',
-                    imgs: ['all.jpg','程式4.jpg','網頁1.jpg','網頁4.jpg','程式&網頁.jpg','文書9.jpg','文書5.jpg','文書1.jpg','文書3.jpg','文書2.jpg'],
+                    imgs: ['all.jpg', '程式4.jpg', '網頁1.jpg', '網頁4.jpg', '程式&網頁.jpg', '文書9.jpg', '文書5.jpg', '文書1.jpg', '文書3.jpg', '文書2.jpg'],
                     date: '2023-11-30',
                 },
             ],
-            Highlights:[{
+            Highlights: [{
 
             }],
             userName: "",
@@ -179,24 +179,49 @@ const app = Vue.createApp({
             this.currentIndex = index;
             this.renderSlider();
         },
+
     },
     watch: {
         currentIndex() {
             this.renderSlider();
         },
     },
+    components: {
+        'like-btn': {
+            template: `
+            <svg id="_圖層_1" data-name="圖層 1" xmlns="http://www.w3.org/2000/svg" class="like-btn mt-2"
+                @click="likeModel" viewBox="0 0 103.24 92.82">
+                <path class="like-btn-cls-1"
+                    d="M102.74,29.25c0-15.88-12.87-28.75-28.75-28.75-9.04,0-17.1,4.17-22.37,10.7C46.35,4.67,38.29,.5,29.25,.5,13.37,.5,.5,13.37,.5,29.25c0,9.25,4.38,17.48,11.17,22.74l40.13,40.13,40.21-40.47c6.54-5.27,10.73-13.34,10.73-22.4Z" />
+            </svg>
+            `,
+            methods: {
+                likeModel(e) {
+                    e.target.style.fill = '#e45a5a'
+                }
+            }
+        },
+        'dot': {
+            template: `
+            <svg id="_圖層_1" data-name="圖層 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56.27 10.1" class='dot mb-2 d-block'>
+                <circle class="dot-cls-1" cx="5.05" cy="5.05" r="5.05"/>
+                <circle class="dot-cls-1" cx="28.13" cy="5.05" r="5.05"/>
+                <circle class="dot-cls-1" cx="51.22" cy="5.05" r="5.05"/>
+            </svg>
+            `
+        }
+    }
 }).mount("#app");
 // <!-------------------------main End------------------------->
 
-
 // <!-------------------------swiper Start------------------------->
-var current_contest_swiper = new Swiper('.current-contest-swiper',{
+var current_contest_swiper = new Swiper('.current-contest-swiper', {
     // loop:true,
-    slidesPerView:1,
-    spaceBetween:10,
-    navigation:{
-        prevEl:'.current-contest-swiper-prev',
-        nextEl:'.current-contest-swiper-next'
+    slidesPerView: 1,
+    spaceBetween: 10,
+    navigation: {
+        prevEl: '.current-contest-swiper-prev',
+        nextEl: '.current-contest-swiper-next'
     }
 })
 
