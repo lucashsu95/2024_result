@@ -1,9 +1,9 @@
 // <!-----------------------main Start-->
 var flag = "";
 var flag2 = 1;
+var oldTop = 0;
 // const root = document.documentElement;
-let oldTop = 0;
-window.onscroll = () => {
+window.onscroll = function () {
     var nowTop = document.documentElement.scrollTop;
     if (nowTop > oldTop) {
         document.querySelector("nav").classList.add("nav_active");
@@ -165,7 +165,7 @@ const app = Vue.createApp({
             this.currentIndex = 0
         },
         prviewImg(title, url) {
-            return `images/${title}/${url}`;
+            return `./images/${title}/${url}`;
         },
         renderSlider() {
             clearInterval(this.auto);

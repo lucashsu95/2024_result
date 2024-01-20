@@ -3,10 +3,12 @@ const gulp = require('gulp');
 const cleanCSS = require('gulp-clean-css');
 const terser = require('gulp-terser');
 const htmlmin = require('gulp-htmlmin');
+const replace = require('gulp-replace');
 
 // 壓縮 HTML 的任務
 gulp.task('minify-html', () => {
     return gulp.src('index.html') // 指定要壓縮的 HTML 檔案
+        .pipe(replace('./images/', '../images/'))  // 根據實際情況調整路徑
         .pipe(htmlmin({ collapseWhitespace: true })) // 使用 gulp-htmlmin 來壓縮 HTML
         .pipe(gulp.dest('dist')); // 將壓縮後的 HTML 輸出到 dist 目錄
 });
@@ -14,6 +16,7 @@ gulp.task('minify-html', () => {
 // 壓縮 CSS 的任務
 gulp.task('minify-css', () => {
     return gulp.src('css/**/*.css') // 指定要壓縮的 CSS 文件
+        .pipe(replace('../images/', '../../images/'))  // 根據實際情況調整路徑
         .pipe(cleanCSS()) // 使用 gulp-clean-css 來壓縮 CSS
         .pipe(gulp.dest('dist/css')); // 將壓縮後的 CSS 輸出到 dist/css 目錄
 });
@@ -21,6 +24,7 @@ gulp.task('minify-css', () => {
 // 壓縮 JavaScript 的任務
 gulp.task('minify-js', () => {
     return gulp.src('js/**/*.js') // 指定要壓縮的 JavaScript 文件
+        .pipe(replace('./images/', '../images/'))  // 根據實際情況調整路徑
         .pipe(terser()) // 使用 gulp-terser 來壓縮 JavaScript
         .pipe(gulp.dest('dist/js')); // 將壓縮後的 JavaScript 輸出到 dist/js 目錄
 });
