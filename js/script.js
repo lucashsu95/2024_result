@@ -17,9 +17,6 @@ window.onscroll = function () {
 const app = Vue.createApp({
     data() {
         return {
-            text_h: "",
-            text_content: "",
-            Lsum: 0,
             slide_id: 0,
             slide: [{
                 title: "什麼是人工智慧？",
@@ -132,14 +129,6 @@ const app = Vue.createApp({
                     date: '2023-11-30',
                 },
             ],
-            Highlights: [{
-
-            }],
-            userName: "",
-            userGmail: "",
-            usercontent: "",
-            sliderIndexDivs: [],
-            currentIndex: 0,
             auto: null,
         };
     },
@@ -148,22 +137,6 @@ const app = Vue.createApp({
     },
     computed: {},
     methods: {
-        fs_footerSubmit() {
-            if (
-                this.userName != "" &&
-                this.userGmail != "" &&
-                this.usercontent != ""
-            ) {
-                this.userName = this.userGmail = this.usercontent = "";
-                alert("我們己經接收到您的留言!\r");
-            } else {
-                console.log("請填完整填寫資料");
-            }
-        },
-        changeCurrentContest(idx) {
-            this.current_contest = this.contests[idx];
-            this.currentIndex = 0
-        },
         prviewImg(title, url) {
             return `./images/${title}/${url}`;
         },
