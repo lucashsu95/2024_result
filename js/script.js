@@ -74,7 +74,7 @@ const app = Vue.createApp({
                     date: '2022-10-29',
                 },
                 {
-                    title: '2022鶑歌陪訓賽',
+                    title: '2022鶑歌培訓賽',
                     imgs: ['1.jpg', '2.jpg', '3.jpg', '4.jpg'],
                     date: '2022-11-19',
                 },
@@ -119,7 +119,7 @@ const app = Vue.createApp({
                     date: '2023-10-14',
                 },
                 {
-                    title: '2023鶑歌陪訓賽',
+                    title: '2023鶑歌培訓賽',
                     imgs: ['1.jpg', '2.jpg', '3.jpg', '4.jpg', '5.jpg', '6.jpg', '7.jpg'],
                     date: '2023-10-28',
                 },
