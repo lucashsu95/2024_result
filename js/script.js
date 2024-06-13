@@ -17,6 +17,7 @@ window.onscroll = function () {
 const app = Vue.createApp({
     data() {
         return {
+            Lsum: 0,
             slide_id: 0,
             slide: [{
                 title: "什麼是人工智慧？",
@@ -129,6 +130,7 @@ const app = Vue.createApp({
                     date: '2023-11-30',
                 },
             ],
+            currentIndex: 0,
             auto: null,
         };
     },
@@ -137,6 +139,10 @@ const app = Vue.createApp({
     },
     computed: {},
     methods: {
+        changeCurrentContest(idx) {
+            this.current_contest = this.contests[idx];
+            this.currentIndex = 0
+        },
         prviewImg(title, url) {
             return `./images/${title}/${url}`;
         },
@@ -199,5 +205,4 @@ var current_contest_swiper = new Swiper('.current-contest-swiper', {
 })
 
 // <!-------------------------swiper End------------------------->
-
 
